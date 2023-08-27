@@ -21,13 +21,15 @@ public class NavigationMenuContainer extends JPanel {
         int rows = result[1];
         tablesBtn = new JButton[rows][cols];
         tableNameLbl = new JLabel[rows+1][cols];
-        setLayout(new GridLayout(rows*2, cols, 5, 5));
+        setLayout(new GridLayout(rows*2, 5, 5, 5));
         placeAllButtons(rows*2, cols);
         setSize(500, 500);
         setVisible(true);
         setBackground(Color.RED);
     }
+    public void putAllButtons(int rows, int cols){
 
+    }
     public void placeAllButtons(int rows, int cols) {
         GridBagConstraints gbc = new GridBagConstraints();
         // meter los jbuttons y labels a una matriz
@@ -57,20 +59,29 @@ public class NavigationMenuContainer extends JPanel {
     public int[] getRowsAndCols(int area) {
         int row = area;
         int col = 1;
-        for (int i = 1; i <= area; i++) {
-            if (area % i == 0
-                    && area / i < row
-                    && i > col
-                    && col < row) {
-                System.out.println("hola");
-                row = area / i;
-                col = i;
+        if (area % 2 == 0){
+            for (int i = 1; i <= area; i++) {
+                if (area % i == 0
+                        && area / i < row
+                        && i > col
+                        && col < row) {
+                    System.out.println("hola");
+                    row = area / i;
+                    col = i;
+                }
             }
         }
-        if (row == area && col == 1){
-            System.out.println("asjhdhjk");
-            row = 6;
-            col = 2;
+        else{
+            for (int i = 1; i <= area; i++) {
+                if (area % i == 0
+                        && area / i < row
+                        && i > col
+                        && col < row) {
+                    System.out.println("hola");
+                    row = area / i;
+                    col = i;
+                }
+            }
         }
         System.out.println(row + " a:;" + area + " c" +col );
         return new int[]{row, col};
