@@ -15,7 +15,7 @@ public class NavigationMenuContainer extends JPanel {
     int gridArea;
 
     public NavigationMenuContainer() {
-        gridArea =  rnd.nextInt(64);
+        gridArea =  13;
         int [] result = getRowsAndCols(gridArea);
         int cols = result[0];
         int rows = result[1];
@@ -64,6 +64,7 @@ public class NavigationMenuContainer extends JPanel {
     public int[] getRowsAndCols(int area) {
         int row = area;
         int col = 1;
+        int pruebapull = 0;
         for (int i = 1; i <= area; i++) {
             if (area % i == 0
                     && area / i < row
