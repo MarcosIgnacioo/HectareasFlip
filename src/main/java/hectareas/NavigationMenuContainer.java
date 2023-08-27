@@ -20,10 +20,9 @@ public class NavigationMenuContainer extends JPanel {
         int cols = result[0];
         int rows = result[1];
         tablesBtn = new JButton[rows][cols];
-        tableNameLbl = new JLabel[rows][cols];
-        System.out.println("width: " + rows + " height: " + cols + " gridarea: " + gridArea);
-        setLayout(new GridBagLayout());
-        placeAllButtons(rows, cols);
+        tableNameLbl = new JLabel[rows+1][cols];
+        setLayout(new GridLayout(rows*2, cols, 5, 5));
+        placeAllButtons(rows*2, cols);
         setSize(500, 500);
         setVisible(true);
         setBackground(Color.RED);
@@ -32,49 +31,48 @@ public class NavigationMenuContainer extends JPanel {
     public void placeAllButtons(int rows, int cols) {
         GridBagConstraints gbc = new GridBagConstraints();
         // meter los jbuttons y labels a una matriz
-        for (int i = 0; i < rows; i += 2) {
+        for (int i = 0; i < rows; i++) {
+            int iLbl = 0;
+            int iBtn = 0;
             for (int j = 0; j < cols; j++) {
-
-                gbc.gridy = i;
-                gbc.gridx = j;
-                tableNameLbl[i][j] = new JLabel("hola");
-                tableNameLbl[i][j].setSize(50, 100);
-                tableNameLbl[i][j].setVisible(true);
-                add(tableNameLbl[i][j], gbc);
-
-                gbc.gridy = i + 1;
-                gbc.gridx = j;
-                tablesBtn[i][j] = new JButton("boton");
-                tablesBtn[i][j].setPreferredSize(new Dimension(50, 100));
-                tablesBtn[i][j].setVisible(true);
-                add(tablesBtn[i][j], gbc);
-                if (tablesBtn[i][j] == null) {
-                    System.out.println("null");
+                if (i % 2 == 0){
+                    tableNameLbl[iLbl][j] = new JLabel("hola");
+                    tableNameLbl[iLbl][j].setSize(50, 100);
+                    tableNameLbl[iLbl][j].setVisible(true);
+                    add(tableNameLbl[iLbl][j]);
+                    iLbl++;
                 }
-                if (tableNameLbl[i][j] == null) {
-                    System.out.println("null");
+                if (i % 2 != 0){
+                    tablesBtn[iBtn][j] = new JButton("boton");
+                    tablesBtn[iBtn][j].setPreferredSize(new Dimension(50, 100));
+                    tablesBtn[iBtn][j].setVisible(true);
+                    add(tablesBtn[iBtn][j]);
+                    iBtn++;
                 }
             }
         }
 
-
-        this.setBackground(Color.ORANGE);
     }
 
     public int[] getRowsAndCols(int area) {
         int row = area;
         int col = 1;
-        int pruebapull = 0;
-        int soypenmdejo = 0;
         for (int i = 1; i <= area; i++) {
             if (area % i == 0
                     && area / i < row
                     && i > col
                     && col < row) {
+                System.out.println("hola");
                 row = area / i;
                 col = i;
             }
         }
+        if (row == area && col == 1){
+            System.out.println("asjhdhjk");
+            row = 6;
+            col = 2;
+        }
+        System.out.println(row + " a:;" + area + " c" +col );
         return new int[]{row, col};
     }
 }

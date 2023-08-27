@@ -22,5 +22,6 @@ public class Home extends JFrame {
         this.repaint();
         this.revalidate();
         this.setVisible(true);
+        this.setLocationRelativeTo(null);
     }
 }
