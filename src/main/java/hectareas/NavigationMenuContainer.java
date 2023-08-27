@@ -65,6 +65,7 @@ public class NavigationMenuContainer extends JPanel {
         int row = area;
         int col = 1;
         int pruebapull = 0;
+        int soypenmdejo = 0;
         for (int i = 1; i <= area; i++) {
             if (area % i == 0
                     && area / i < row
