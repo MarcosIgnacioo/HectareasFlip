@@ -15,7 +15,10 @@ public class TableButton extends JPanel {
         JButton tableBtn = new JButton();
             tableBtn.setPreferredSize(new Dimension(50,50));
             add(tableBtn);
-        setPreferredSize(new Dimension(100,100));
+
+        setMinimumSize(new Dimension(100,100));
+        setMaximumSize(new Dimension(150,150));
+        setPreferredSize(new Dimension(125,125));
         repaint();
         revalidate();
         setVisible(true);

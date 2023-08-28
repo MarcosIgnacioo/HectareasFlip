@@ -15,10 +15,10 @@ public class TablesNav extends JPanel {
 
     public TablesNav() {
         setLayout(new GridLayout(10, 2, 5, 5));
-        setSize(900, 900);
+        setSize(300, 300);
 
 
-        createTableButtons(25);
+        createTableButtons(90);
         placeTableButtons(2);
         //createAllElements(13);
         //placeLabels(2, 0);
