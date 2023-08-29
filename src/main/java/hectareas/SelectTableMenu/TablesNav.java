@@ -8,64 +8,54 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TablesNav extends JPanel {
-    List<JButton> btnList = new ArrayList<>();
-    List<JLabel> lblList = new ArrayList<>();
 
     List<TableButton> tblBtnList = new ArrayList<>();
 
     public TablesNav() {
-        setLayout(new GridLayout(10, 2, 5, 5));
+        setLayout(new GridLayout(1000, 2, 5, 5));
         setSize(300, 300);
 
 
         createTableButtons(90);
-        placeTableButtons(2);
-        //createAllElements(13);
-        //placeLabels(2, 0);
+        placeTableButtons();
         setBackground(Color.blue);
         repaint();
         revalidate();
         setVisible(true);
+        getRowsAndCols(17);
     }
-    public void placeTableButtons(int cols){
+    public void placeTableButtons(){
         add(tblBtnList.get(0));
         tblBtnList.remove(0);
-        if (tblBtnList.size() >= 1) placeTableButtons(cols);
+        if (tblBtnList.size() >= 1) placeTableButtons();
     }
     public void createTableButtons(int elementsNum){
         for (int i = 0; i < elementsNum; i++) {
-            tblBtnList.add(i, new TableButton("hola: " + i));
+            tblBtnList.add(i, new TableButton("hola: " + i+1));
         }
     }
-    public void placeButtons(int cols, int buffer){
-
-        add(btnList.get(0));
-        btnList.remove(0);
-        buffer++;
-        if (buffer != cols && btnList.size() >= 1) placeButtons(cols,buffer);
-        else  if (lblList.size() >= 1) placeLabels(cols, 0);
-    }
-    public void placeLabels(int cols, int buffer){
-        add(lblList.get(0));
-        lblList.remove(0);
-        buffer++;
-        if (buffer != cols && lblList.size() >= 1) placeLabels(cols, buffer);
-        else if (btnList.size() >= 1) placeButtons(cols, 0);
-    }
-    public void createAllElements(int elementsNum){
-        for (int i = 0; i < elementsNum; i++) {
-            btnList.add(i, new JButton("button: " + i));
-            lblList.add(i, new JLabel("label: " + i));
+    public void getRowsAndCols(int area){
+        int rows = area;
+        int cols = 1;
+        for (int i = 1; i <= area; i++) {
+            if (area % i == 0
+                    && area / i < rows
+                    && i > cols
+                    && cols < rows) {
+                rows = i;
+                cols = area / i;
+            }
         }
-        for (JButton button:
-             btnList) {
-            button.setPreferredSize(new Dimension(50,50));
-            button.setVisible(true);
+        if (rows == area && cols == 1){
+            int smallestResidue = 0;
+            for (int i = 0; i < area; i++) {
+                if (area % i > smallestResidue){
+                    smallestResidue = area % i;
+                }
+            }
         }
-        for (JLabel label:
-                lblList) {
-            label.setPreferredSize(new Dimension(50,50));
-            label.setVisible(true);
-        }
+        System.out.println(area%5);
+        System.out.println(rows );
+        System.out.println(cols );
     }
 }

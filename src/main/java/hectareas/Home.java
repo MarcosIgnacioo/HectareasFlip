@@ -5,11 +5,11 @@ import hectareas.SelectTableMenu.TablesNav;
 import javax.swing.*;
 import java.awt.*;
 
-public class Home extends JFrame {
-    public Home() {
+public class Home extends JPanel {
+    public Home(Color c) {
         // Window config
         this.setLayout(new BorderLayout());
-        this.getContentPane().setBackground(Color.orange);
+        this.setBackground(c);
 
         TablesNav tn = new TablesNav();
         JScrollPane scrollPane = new JScrollPane(tn);  // El scrollpane es como un contenedor con las scrollbars,
@@ -19,12 +19,7 @@ public class Home extends JFrame {
         test.setPreferredSize(new Dimension(300,300));
         this.add(test, BorderLayout.EAST);
         this.setSize(900, 900);
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        this.setLocationRelativeTo(null);
         this.setVisible(true);
-    }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(Home::new);
     }
 }
