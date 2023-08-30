@@ -22,9 +22,5 @@ public class TableButton extends JPanel {
         repaint();
         revalidate();
         setVisible(true);
-        asd();
-    }
-    public static void asd(){
-        System.out.println("asd");
     }
 }

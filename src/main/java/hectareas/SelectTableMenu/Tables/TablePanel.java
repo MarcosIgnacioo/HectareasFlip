@@ -1,4 +1,4 @@
-package hectareas.SelectTableMenu.TableWindow;
+package hectareas.SelectTableMenu.Tables;
 
 import javax.swing.*;
 

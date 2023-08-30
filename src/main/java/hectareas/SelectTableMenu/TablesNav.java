@@ -48,14 +48,11 @@ public class TablesNav extends JPanel {
         }
         if (rows == area && cols == 1){
             int smallestResidue = 0;
-            for (int i = 0; i < area; i++) {
+            for (int i = 1; i < area; i++) {
                 if (area % i > smallestResidue){
                     smallestResidue = area % i;
                 }
             }
         }
-        System.out.println(area%5);
-        System.out.println(rows );
-        System.out.println(cols );
     }
 }
