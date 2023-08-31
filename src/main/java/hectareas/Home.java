@@ -1,6 +1,7 @@
 package hectareas;
 
-import hectareas.SelectTableMenu.TablesNav;
+import hectareas.SelectTableMenu.Tables.TablesComponents.CustomDTM;
+import hectareas.SelectTableMenu.Tables.TablesComponents.CustomTable;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,14 +11,13 @@ public class Home extends JPanel {
         // Window config
         this.setLayout(new BorderLayout());
         this.setBackground(c);
-
-        TablesNav tn = new TablesNav();
-        JScrollPane scrollPane = new JScrollPane(tn);  // El scrollpane es como un contenedor con las scrollbars,
-                                                      // si se mete algo ahi, solamente se debe de agregar el scrollpane al frame
-        this.add(scrollPane, BorderLayout.CENTER); // Agregando el JScrollPane al contenedor
-        JLabel test = new JLabel("asdasd");
-        test.setPreferredSize(new Dimension(300,300));
-        this.add(test, BorderLayout.EAST);
+        String [] names = {"owo_owo", "hola_mundo"};
+        Object [][] data = {{1,2,3},{1,2,3}};
+        CustomDTM customDTM = new CustomDTM(names,data);
+        CustomTable customTable = new CustomTable(customDTM);
+        JScrollPane jScrollPane = new JScrollPane(customTable);
+        jScrollPane.setSize(300,300);
+        this.add(jScrollPane);
         this.setSize(900, 900);
         this.setVisible(true);
 

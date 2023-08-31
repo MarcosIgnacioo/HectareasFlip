@@ -11,6 +11,7 @@ public class CustomDTM extends DefaultTableModel {
             columnNames[i] = columnNames[i].replace(" ", "<br>");
             columnNames[i] = htmlFormat.replace("Name", columnNames[i]);
         }
+        setDataVector(tableData,columnNames);
     }
     public static String [] reformatingColumnNames(String [] columnNames){
         String [] formatedColumnNames = new String[columnNames.length];
