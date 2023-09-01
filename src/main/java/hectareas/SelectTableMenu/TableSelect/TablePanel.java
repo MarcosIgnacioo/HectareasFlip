@@ -1,7 +1,7 @@
-package hectareas.SelectTableMenu.Tables;
+package hectareas.SelectTableMenu.TableSelect;
 
-import hectareas.SelectTableMenu.Tables.TablesComponents.CustomDTM;
-import hectareas.SelectTableMenu.Tables.TablesComponents.CustomTable;
+import hectareas.SelectTableMenu.TableSelect.TablesComponents.CustomDTM;
+import hectareas.SelectTableMenu.TableSelect.TablesComponents.CustomTable;
 
 import javax.swing.*;
 

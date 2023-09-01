@@ -12,21 +12,24 @@ public class TablesNav extends JPanel {
     List<TableButton> tblBtnList = new ArrayList<>();
 
     public TablesNav() {
-        setLayout(new GridLayout(1000, 2, 5, 5));
-        setSize(300, 300);
+        setLayout(new GridLayout(10, 10, 5, 5));
+        setSize(900, 300);
 
 
-        createTableButtons(90);
+        createTableButtons(10);
         placeTableButtons();
-        setBackground(Color.blue);
+        setBackground(Color.orange);
         repaint();
         revalidate();
         setVisible(true);
-        getRowsAndCols(17);
+        getRowsAndCols(5);
     }
     public void placeTableButtons(){
         add(tblBtnList.get(0));
         tblBtnList.remove(0);
+        repaint();
+        revalidate();
+        setVisible(true);
         if (tblBtnList.size() >= 1) placeTableButtons();
     }
     public void createTableButtons(int elementsNum){

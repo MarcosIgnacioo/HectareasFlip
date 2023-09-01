@@ -1,4 +1,4 @@
-package hectareas.SelectTableMenu.Tables.TablesComponents;
+package hectareas.SelectTableMenu.TableSelect.TablesComponents;
 
 import javax.swing.table.DefaultTableModel;
 import java.util.Arrays;
