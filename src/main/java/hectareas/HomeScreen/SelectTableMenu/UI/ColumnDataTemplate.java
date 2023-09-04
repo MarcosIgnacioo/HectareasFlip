@@ -48,9 +48,10 @@ public class ColumnDataTemplate extends JPanel {
             deleteColumnBtn.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
+                    getParent().repaint();
+                    getParent().revalidate();
                     getParent().remove(tmp);
-                    repaint();
-                    revalidate();
+                    System.out.println(getParent());
                 }
             });
             this.add(deleteColumnBtn,gbc);
