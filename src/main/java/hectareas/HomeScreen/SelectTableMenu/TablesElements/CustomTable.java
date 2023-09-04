@@ -1,4 +1,4 @@
-package hectareas.SelectTableMenu.TableSelect.TablesComponents;
+package hectareas.HomeScreen.SelectTableMenu.TablesElements;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;

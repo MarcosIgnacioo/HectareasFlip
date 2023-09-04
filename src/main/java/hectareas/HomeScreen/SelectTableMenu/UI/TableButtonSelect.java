@@ -1,13 +1,13 @@
-package hectareas.SelectTableMenu;
+package hectareas.HomeScreen.SelectTableMenu.UI;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class TableButton extends JPanel {
+public class TableButtonSelect extends JPanel {
 
-    public TableButton(String tableName) {
+    public TableButtonSelect(String tableName) {
 
         setLayout(new GridLayout(2,1));
         JLabel tableLbl = new JLabel(tableName);

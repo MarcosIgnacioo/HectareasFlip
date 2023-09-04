@@ -1,6 +1,6 @@
 package hectareas;
 
-import hectareas.SelectTableMenu.TablesNav;
+import hectareas.TableManager.ManageTable.TablesNavPanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,7 +19,7 @@ public class owo {
             JPanel contentPanel = new JPanel();
             contentPanel.setLayout(new BoxLayout(contentPanel, BoxLayout.PAGE_AXIS));
 
-            TablesNav tn = new TablesNav();
+            TablesNavPanel tn = new TablesNavPanel();
 
             contentPanel.add(tn);
             // Agrega el panel interno al JScrollPane (con barra deslizadora)
