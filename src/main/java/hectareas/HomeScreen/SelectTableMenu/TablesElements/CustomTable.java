@@ -1,9 +1,14 @@
 package hectareas.HomeScreen.SelectTableMenu.TablesElements;
 
+import hectareas.Frames.TabFrame;
+import hectareas.TableManager.ManageTable.EditRegisterPanel;
+
 import javax.swing.*;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.JTableHeader;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class CustomTable extends JTable {
     String evenColor;
@@ -14,6 +19,24 @@ public class CustomTable extends JTable {
         this.evenColor = evenColor;
         this.oddColor = oddColor;
         createStylizedTable(this);
+        addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                if (e.getClickCount() == 1){
+                    JTable target = (JTable)e.getSource();
+                    int row = target.getSelectedRow();
+                    int column = target.getSelectedColumn();
+                    Object [] rowData = new Object[customDTM.getColumnCount()];
+                    for (int i = 0; i < rowData.length; i++) {
+                        rowData[i] = getValueAt(row,i);
+                    }
+
+                    EditRegisterPanel h = new EditRegisterPanel(customDTM, rowData, row);
+                    TabFrame mf = new TabFrame(h);
+                }
+            }
+        });
     }
 
     public CustomTable(CustomDTM customDTM) {

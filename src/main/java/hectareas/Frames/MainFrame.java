@@ -1,4 +1,4 @@
-package hectareas.MainFrame;
+package hectareas.Frames;
 
 import javax.swing.*;
 import java.awt.*;

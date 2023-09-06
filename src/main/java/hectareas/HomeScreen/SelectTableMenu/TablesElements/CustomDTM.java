@@ -5,7 +5,11 @@ import java.util.Arrays;
 
 public class CustomDTM extends DefaultTableModel {
     String htmlFormat = "<html><div style='text-align: center;'>Name</div></html>";
+    private final String [] ogColumnNames;
+    private final Object [][] ogTableData;
     public CustomDTM(String [] columnNames, Object [][] tableData) {
+        ogColumnNames = columnNames;
+        ogTableData = tableData;
         columnNames = reformatingColumnNames(columnNames);
         for (int i = 0; i < columnNames.length; i++) {
             columnNames[i] = columnNames[i].replace(" ", "<br>");
@@ -30,5 +34,13 @@ public class CustomDTM extends DefaultTableModel {
         }
         Arrays.stream(formatedColumnNames).forEach(System.out::println);
         return formatedColumnNames;
+    }
+
+    public String[] getOgColumnNames() {
+        return ogColumnNames;
+    }
+
+    public Object[][] getOgTableData() {
+        return ogTableData;
     }
 }
