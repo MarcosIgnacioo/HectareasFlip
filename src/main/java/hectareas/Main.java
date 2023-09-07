@@ -19,7 +19,14 @@ public class Main extends JFrame{
                 new String[]{"productor", "siembra", "hectareas"},
                 new Object[][]{
                         {"alex", "tomate", "3"},
-                        {"panchi","calabaza", "5"}});
+                        {"panchi","calabaza", "5"},
+                        {"alex", "tomate", "3"},
+                        {"panchi","calabaza", "5"},
+                        {"alex", "tomate", "3"},
+                        {"panchi","calabaza", "5"},
+                        {"alex", "tomate", "3"},
+                        {"panchi","calabaza", "5"}
+                });
         SelectedTablePanel sl = new SelectedTablePanel(dtm);
         MainFrame mf = new MainFrame(sl);
     }

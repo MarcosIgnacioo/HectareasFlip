@@ -4,7 +4,7 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
-public class JHintTextField extends JTextField {
+public class    JHintTextField extends JTextField {
         private final String hint;
 
         public JHintTextField(String hint) {

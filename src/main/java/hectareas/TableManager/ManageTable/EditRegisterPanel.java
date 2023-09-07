@@ -7,7 +7,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+
 
 public class EditRegisterPanel extends JPanel{
     List<JLabel> columnNamesLabels = new ArrayList<>();
@@ -25,8 +27,8 @@ public class EditRegisterPanel extends JPanel{
         revalidate();
     }
     public void placeLabelsAndTextFields(){
-        for (int i = 0; i < customDTM.getColumnCount(); i++) {
-            System.out.println();
+        for (int i = 0; i < customDTM.getColumnCount()-1; i++) {
+
             columnNamesLabels.add(new JLabel(customDTM.getOgColumnNames()[i]));
             columnNamesLabels.get(i).setMaximumSize(new Dimension(100,50));
             columnNamesLabels.get(i).setOpaque(true);

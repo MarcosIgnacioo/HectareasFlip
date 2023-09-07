@@ -16,6 +16,7 @@ public class CustomDTM extends DefaultTableModel {
             columnNames[i] = htmlFormat.replace("Name", columnNames[i]);
         }
         setDataVector(tableData,columnNames);
+        addColumn("Borrar");
     }
     public static String [] reformatingColumnNames(String [] columnNames){
         String [] formatedColumnNames = new String[columnNames.length];

@@ -22,18 +22,19 @@ public class CustomTable extends JTable {
         addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
+                JTable target = (JTable)e.getSource();
                 super.mouseClicked(e);
                 if (e.getClickCount() == 1){
-                    JTable target = (JTable)e.getSource();
                     int row = target.getSelectedRow();
-                    int column = target.getSelectedColumn();
-                    Object [] rowData = new Object[customDTM.getColumnCount()];
+                    Object [] rowData = new Object[customDTM.getColumnCount()-1];
                     for (int i = 0; i < rowData.length; i++) {
                         rowData[i] = getValueAt(row,i);
                     }
-
                     EditRegisterPanel h = new EditRegisterPanel(customDTM, rowData, row);
-                    TabFrame mf = new TabFrame(h);
+                    //TabFrame mf = new TabFrame(h);
+                }
+                if (target.getSelectedColumn() == customDTM.getColumnCount()-1){
+                    customDTM.removeRow(getSelectedRow());
                 }
             }
         });
